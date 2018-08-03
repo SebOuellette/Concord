@@ -1,0 +1,59 @@
+body {
+    background-color: #333;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+}
+
+.loadinglogo {
+    height: 20vmin;
+    width: 20vmin;
+    position: absolute;
+    right: 5vmin;
+    bottom: 5vmin;
+    /*transform: translate(-100%, -100%);*/
+    user-select: none;
+}
+
+.loaders {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+
+.loader {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    animation-name: loader;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.loader.one {
+    animation-delay: 0s;
+}
+.loader.two {
+    animation-delay: .1s;
+}
+.loader.three {
+    animation-delay: .2s;
+}
+.loader.four {
+    animation-delay: .3s;
+}
+.loader.five {
+    animation-delay: .4s;
+}
+
+@keyframes loader {
+    0%   {transform: translateY(0)}
+    25%  {transform: translateY(50px)}
+    50%  {transform: translateY(-50px)}
+    100% {transform: translateY(0)}
+}

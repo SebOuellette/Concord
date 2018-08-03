@@ -1,0 +1,30 @@
+{
+  "name": "concord",
+  "version": "0.0.1",
+  "description": "Concord is the html canvas game engine packed with tools that will streamline your 2d cross platform game development. ",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlayBy/Concord.git"
+  },
+  "keywords": [
+    "Concord",
+    "2d",
+    "game",
+    "engine",
+    "PlayBy",
+    "SharkFin"
+  ],
+  "author": "Sebastian Ouellette",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PlayBy/Concord/issues"
+  },
+  "homepage": "https://github.com/PlayBy/Concord#readme",
+  "dependencies": {
+    "electron": "^2.0.6"
+  }
+}
