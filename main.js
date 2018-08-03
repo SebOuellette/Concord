@@ -1,10 +1,13 @@
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow, Menu, ipcMain} = require('electron');
+const {Class} = require('./js/class.js');
+const contact = new Class();
 
 // Create the 'win' variable in the global scope
-let win;
+let wins = [];
 
 const createWindow = () => {
     // Create the window
+    let win;
     win = new BrowserWindow({width: 800, minWidth: 800, height: 600, minHeight: 600, icon: './designs/logodark.png'});
 
     // Load the main page
@@ -13,13 +16,23 @@ const createWindow = () => {
     // Clear the win variable once it is closed
     win.on('closed', () => {
         win = null;
+        contact.wins = wins;
     });
+    wins.push({win});
+    contact.wins = wins;
 
     // Start the menu
-    require('./js/menu.js');
+    require('./js/menu.js').run(contact);
 };
 
-
+// Runs when other files need to contact this file
+contact.on('menu', arg => {
+    if (arg.type === 'newWin') {
+        createWindow();
+    } else if (arg.type === 'renderer') {
+        arg.window.webContents.send('menu', arg.action);
+    }
+});
 
 // Launch the starting procedure once electron is ready
 app.on('ready', createWindow);

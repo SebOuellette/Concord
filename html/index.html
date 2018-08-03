@@ -7,6 +7,16 @@
         <script src="../js/app.js"></script>
     </head>
     <body>
+        <!-- Main game engine -->
+        <div class='mainEngine'>
+            <div class='viewport'>
+                <canvas id='canvas' height=200 width=200/>
+            </div>
+            <div class='fileExplorer'></div>
+            <div class='objectsMenu'></div>
+            <div class='settingsMenu'></div>
+        </div>
+
         <!-- Loading page overlay -->
         <div id='loadingPage'>
             <div class='loaders'>
@@ -18,7 +28,5 @@
             </div>
             <object class='loadinglogo' data="../designs/logo.svg" type='image/svg+xml'></object>
         </div>
-        <!-- Main game engine -->
-
     </body>
 </html>
