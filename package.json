@@ -25,6 +25,9 @@
   },
   "homepage": "https://github.com/PlayBy/Concord#readme",
   "dependencies": {
-    "electron": "^2.0.6"
+    "electron": "^2.0.6",
+    "electron-prebuilt-compile": "^2.0.6",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   }
 }

@@ -6,11 +6,9 @@ const contact = new Class();
 let wins = [];
 
 const createWindow = () => {
-    // Create the window
+    // Create the window and show content
     let win;
     win = new BrowserWindow({width: 800, minWidth: 800, height: 600, minHeight: 600, icon: './designs/logodark.png'});
-
-    // Load the main page
     win.loadFile('./html/index.html');
 
     // Clear the win variable once it is closed

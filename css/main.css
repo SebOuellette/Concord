@@ -1,12 +1,18 @@
+@font-face {
+    font-family: Palanquin;
+    src: url(../fonts/PalanquinDark-Medium.ttf);
+}
+
 body {
     background-color: #333;
     height: 100vh;
     width: 100vw;
     margin: 0;
     overflow: hidden;
+    font-family: Arial;
 }
 
-#loadingPage {
+.loading {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -32,7 +38,7 @@ body {
     user-select: none;
 }
 
-.loader {
+.loaders div {
     height: 20px;
     width: 20px;
     background-color: white;
@@ -43,19 +49,19 @@ body {
     animation-iteration-count: infinite;
 }
 
-.loader.one {
+.loaders div.one {
     animation-delay: 0s;
 }
-.loader.two {
+.loaders div.two {
     animation-delay: .1s;
 }
-.loader.three {
+.loaders div.three {
     animation-delay: .2s;
 }
-.loader.four {
+.loaders div.four {
     animation-delay: .3s;
 }
-.loader.five {
+.loaders div.five {
     animation-delay: .4s;
 }
 
@@ -66,11 +72,11 @@ body {
     100% {transform: translateY(0)}
 }
 
-.viewport {
+#viewport {
     position: absolute;
     height: 60vh;
     width: 60vw;
-    border: 1px solid #555;
+    border-right: 1px solid #555;
     background-color: #444;
     overflow: hidden;
 }
@@ -79,6 +85,72 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
     background-color: white;
+    transform-origin: 0 0 0;
+}
+
+.fileExplorer {
+    position: absolute;
+    height: 40vh;
+    width: 60vw;
+    left: 0;
+    bottom: 0;
+    border: 1px solid #555;
+    border-width: 1px 1px 0 0;
+    background-color: #333;
+}
+
+#dir {
+    width: calc(30% - 20px);
+    height: calc(100% - 10px);
+    border-right: 1px solid #555;
+    padding: 10px 0 0 10px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#dir::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+#dir::-webkit-scrollbar-thumb {
+    background-color: #444;
+}
+
+
+#dir p {
+    color: #bbb;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 4px;
+    user-select: none;
+    font-size: 13px;
+    display: inline-block;
+}
+.fsparent {
+    cursor: pointer;
+    padding-left: 20px;
+    margin-left: -10px;
+}
+.fsparent:hover {
+   background-color: #292929;
+}
+
+
+.folderArrow {
+    display: inline-block;
+    border: 3px solid #fff;
+    border-color: #fff #fff transparent transparent;
+    height: 0;
+    width: 0;
+    margin-left: -10px;
+    margin-right: 7px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.folder.active .folderArrow {
+    transform: rotate(135deg);
+}
+.content {
+    padding-left: 10px;
 }

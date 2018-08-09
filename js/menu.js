@@ -45,9 +45,10 @@ exports.run = contact => {
                     click(item, focusedWindow) {
                         const data = {
                             type: 'newWin',
-                            project: ''
+                            project: '',
+                            window: focusedWindow
                         }
-                        contact.emit('menu', (data, focusedWindow));
+                        contact.emit('menu', data);
                     }
                 }
             ]
